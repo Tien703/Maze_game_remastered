@@ -1,4 +1,4 @@
-from logic.config import DIRECTION_MAP
+from src.system.config import DIRECTION_MAP, TILE_SIZE
 from abc import ABC
 class Character(ABC):
     """ abtraction class for players and ghosts
@@ -6,6 +6,7 @@ class Character(ABC):
     def __init__(self, starting_r, starting_c):
         self.r = starting_r 
         self.c = starting_c
+        self.title_size =TILE_SIZE
 
     def moves(self,direction):
         """Method to move character around

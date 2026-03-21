@@ -4,4 +4,4 @@ DIRECTION_MAP ={
     3: (0, -2),
     4: (0, 2),
 }
-
+TILE_SIZE =20
