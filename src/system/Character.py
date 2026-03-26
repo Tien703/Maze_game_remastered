@@ -21,7 +21,7 @@ class Character(ABC):
     def valid_direction(self, grid, direction):
         """ Method to check valid move
         Args: 
-            grid (numpy.ndarray): The maze grid
+            grid (numpy.ndarray): The mazef grid
             direction (int): 1: up, 2: down, 3: left, 4: right
         Returns
             Valid? (bool): True if the move is within boundaries and not a wall (0 is path, 1 is wall)
@@ -43,7 +43,6 @@ class Character(ABC):
             return False
 
         return True
-
 
          
 

@@ -16,3 +16,8 @@ class Player(Character):
         pixel_x = self.c * ts + offset
         pixel_y = self.r * ts + offset
         pygame.draw.rect(screen, self.color, (pixel_x, pixel_y, size, size), border_radius=6)
+    
+    
+
+
+    

@@ -1,6 +1,7 @@
 import pygame
 from generator.Randomized_DFS import Randomized_DFS as DFS
 
+
 class Maze:
     def __init__(self, w, h, algo=DFS):
         self.grid, self.path = algo(w, h).generate()
@@ -17,3 +18,5 @@ class Maze:
         for i in range(min(index + 1, len(self.path))):
             r, c = self.path[i]
             pygame.draw.rect(surface, (240, 240, 240), (c * ts, r * ts, ts, ts))
+    
+    

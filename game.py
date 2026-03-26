@@ -1,23 +1,26 @@
 import pygame, sys
 from src.system.Maze import Maze
 from src.system.Player import Player
+from src. system.exit_gate import Exit_gate
 
-W, H = 20, 20
+W, H = 10, 10
 INIT_TILE = 20
 
 def reset_game():
     m = Maze(W, H)
     p = Player(*m.path[0])
-    return m, p, 0, 0
+    e = Exit_gate(W*2-1, H*2-1)
+    return m, p, e, 0, 0
 
 def get_tile_size(screen_w, screen_h, grid_w, grid_h):
     return min(screen_w // grid_w, screen_h // grid_h)
 
 def main():
+    
     pygame.init()
     screen = pygame.display.set_mode(((W*2+1)*INIT_TILE, (H*2+1)*INIT_TILE), pygame.RESIZABLE)
     clock = pygame.time.Clock()
-    maze, player, state, ani_idx = reset_game()
+    maze, player, exit_gate, state, ani_idx = reset_game()
 
     while True:
         sw, sh = screen.get_size()
@@ -45,6 +48,12 @@ def main():
             player.draw_player(screen, ts)
         else: # Menu
             maze.draw_step(screen, ts, 0)
+        exit_gate.draw_exit(screen, ts)
+        if player.r== exit_gate.r and player.c == exit_gate.c:
+            print("you win ")
+            break
+
+        
 
         pygame.display.flip()
         clock.tick(60)

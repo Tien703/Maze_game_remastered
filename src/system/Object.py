@@ -1,6 +1,6 @@
 from abc import ABC
 class Object(ABC):
-    """ ABC class to define object on maze
+    """ABC class to define object on maze
             exit_point
             safe_zone
         
@@ -10,7 +10,7 @@ class Object(ABC):
             r: object' current row
             c: object' current col
         """
+        self.c_position = c
         self.r_position = r
-        self.c_postiokn = c
     
 
